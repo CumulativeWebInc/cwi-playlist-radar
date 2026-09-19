@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Methodology — Playlist Fraud Radar</title>
+<style>
+:root{--bg:#0d1117;--card:#161b22;--line:#30363d;--txt:#e6edf3;--dim:#8b949e;--amber:#d29922;--blue:#58a6ff}
+body{margin:0;background:var(--bg);color:var(--txt);font-family:-apple-system,system-ui,Segoe UI,Roboto,sans-serif;line-height:1.65}
+.wrap{max-width:760px;margin:0 auto;padding:28px 18px 60px}
+h1{font-size:1.6rem}h2{font-size:1.15rem;margin-top:1.8em}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:12px 0}
+a{color:var(--blue)}.dim{color:var(--dim)}
+.warn{color:var(--amber);font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a href="index.html">← back to the radar</a>
+<h1>Methodology</h1>
+<p class="dim">How the Playlist Fraud Radar grades playlists — and what it refuses to do.</p>
+
+<h2>The tiers</h2>
+<div class="card"><b>V — Verified.</b> An actual placement add was confirmed by a full playlist scan or engine collect on the stated date. This is the strongest grade we issue.</div>
+<div class="card"><b>U — Unverified claim.</b> A curator claimed an add or promised one; CWI could not confirm it. This is <b>not</b> evidence of fraud — it means exactly what it says.</div>
+<div class="card"><b>P — Paid-placement pattern (factual).</b> The curator publicly advertises paid placement. This is a cited fact about their business model, not an accusation of wrongdoing. Artists should read the terms before paying.</div>
+
+<h2>Tiers, never verdicts</h2>
+<p>We grade evidence, not people. A wrong flag can harm a legitimate curator's livelihood, so this dashboard will never call anyone a scammer or fraudster. Every automated build runs a defamation guard that fails closed on verdict language. Flags must cite their sources; a flag without evidence is rejected by the validator before it can ship.</p>
+
+<h2>Freshness</h2>
+<p>A grade is <b>fresh</b> only if its evidence was observed within the last 48 hours. Older grades are labeled <b>stale</b>. Stale is honest. We would rather show you a stale grade than manufacture a fresh-looking one — a validator enforces this on every build.</p>
+
+<h2>Limits</h2>
+<ul>
+<li>This is CWI's verified view of the playlists <i>we</i> have investigated, seeded from our own campaign scans. It is not a universal authority.</li>
+<li>A playlist not listed here has no grade from us at all — absence from the radar is not a grade.</li>
+<li>Evidence types we accept: full playlist scans, paginated engine collects, direct review of a curator's public site, documented failed verification. Rumors, screenshots from strangers, and vibes are not evidence.</li>
+<li>The seed set is small (5 playlists). It grows only when a new verification event happens.</li>
+</ul>
+
+<h2>Corrections</h2>
+<p>If you are a curator and an entry is wrong, email <b>hp@cumulativeweb.com</b> with evidence. We will re-scan and update the entry. Corrections are logged in the entry's notes — not hidden.</p>
+
+<h2>Machine-readable data</h2>
+<p>The full dataset is <a href="radar.json">radar.json</a> — same tiers, same evidence, same freshness. The validator that guards it (<code>validator.js</code>) and its adversarial test suite (<code>test.js</code>) ship in the repo alongside the data.</p>
+
+<p class="dim">Cumulative Web Inc · radar schema v1 · This dashboard is an experiment: fewer than 200 monthly visitors by day 90 and the lane is killed.</p>
+</div>
+</body>
+</html>
